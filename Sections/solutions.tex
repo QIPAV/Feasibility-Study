@@ -1,0 +1,10 @@
+\section{Possible design implementations}
+
+When building the variable pitch quadcopter we have the opportunity to go with a constant RPM on the propellers. If we choose to go with this type of design we will probably decrease the battery usage when flying, thus extending the operation time.  \\
+This brings up another critical design choice. Having one central engine with multiple servos. This gives us a constant RPM on each propeller and no need for a governor to micromanage each propeller. Most of the other variable pitch quadcopters designs we have found seem to go with this design solution. 
+\\\\
+The other possibility is to go with independent RPM, the same as a traditional fixed variable pitch quadcopter. This will open up for more agile flying. In this type of design it would be natural to go with one engine for each propeller. 
+\\\\
+In addition, the quadcopter needs to fly with an autopilot and with radio control. We have the opportunity to choose to modify a pixhawk autopilot px4 software in order for it to work with variable pitch. This would require us to alter an existing autopilot and make it compatible with variable pitch. If we go for this design implementation, then we will have the fixed pitch ready as soon as we have a quadcopter and the pixhawk. The disadvantage with this approach is the long development time for the variable pitch. It takes a lot of time reading and understanding the code, before we could even start at developing a variable pitch mode for the pixhawk. 
+\\
+The other option is to create our own autopilot program for quadcopters with variable pitch. One disadvantage with this is the increased development time for a fixed-pitch autopilot, since we will create it from scratch. The advantage is that it might lead to a shorter development time for the variable pitch quadcopter. It requires a lot of knowledge about autopilots for quadcopters/UAVS, and general technology behind it such as PID controllers, kalman filtering (linear quadratic estimation), control theory and coding logic. In the end it looks to us that this will lead to a shorter development time of both fixed and variable pitch.
